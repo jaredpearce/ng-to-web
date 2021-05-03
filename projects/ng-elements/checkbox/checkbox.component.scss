@@ -1,0 +1,194 @@
+$xl-white: #fff;
+$xl-cool-grey-4: #bbbcbc;
+$xl-cool-grey-4-75: rgba(204, 205, 205, 1);
+$xl-cool-grey-2-20: #f6f6f6;
+
+$xl-blue: #00a3e0;
+$xl-sky-blue: #33b4e5;
+
+.ng-checkbox {
+  display: inline-block;
+  line-height: 1;
+  min-width: 16px;
+  position: relative;
+
+  label{
+    margin: 0;
+  }
+
+  [type='checkbox'] {
+    display: none;
+
+    &.after {
+      + span {
+        display: block;
+        margin: 2px 0 2px 24px;
+
+        @media all and (-ms-high-contrast:none)
+        {
+          margin: 1px 0 1px 24px;
+        }
+      }
+    }
+
+    &.before {
+      + span {
+        display: block;
+        margin: 2px 5px 2px 0;
+
+        @media all and (-ms-high-contrast:none)
+        {
+          margin: 2px 5px 1px 0;
+        }
+      }
+    }
+
+
+    // empty
+    + span.after::before {
+      background-color: $xl-white;
+      border: 1px solid $xl-cool-grey-4-75;
+      border-radius: 2px;
+      content: '';
+      height: 16px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 16px;
+    }
+
+    // empty label before
+    + span.before::before {
+      background-color: $xl-white;
+      border: 1px solid $xl-cool-grey-4-75;
+      border-radius: 2px;
+      content: '';
+      height: 16px;
+      right: -20px;
+      position: absolute;
+      top: 0;
+      width: 16px;
+    }
+
+    // checked
+    &:checked + span.after::before {
+      background-color: $xl-blue;
+      border-color: $xl-blue;
+    }
+
+    // checked label before
+    &:checked + span.before::before {
+      background-color: $xl-blue;
+      border-color: $xl-blue;
+    }
+
+    &:checked + span.after::after,
+    &:checked[disabled] + span.after::after,
+    &:checked:disabled + span.after::after {
+      border-bottom: 2px solid $xl-white;
+      border-right: 2px solid $xl-white;
+      content: '';
+      height: 9px;
+      left: 5px;
+      position: absolute;
+      top: 3px;
+      transform: rotate(45deg);
+      width: 6px;
+    }
+
+    &:checked + span.before::after,
+    &:checked[disabled] + span.before::after,
+    &:checked:disabled + span.before::after {
+      border-bottom: 2px solid $xl-white;
+      border-right: 2px solid $xl-white;
+      content: '';
+      height: 9px;
+      right: -15px;
+      position: absolute;
+      top: 3px;
+      transform: rotate(45deg);
+      width: 6px;
+    }
+
+    // disabled
+    &:checked[disabled] + span::before,
+    &:checked:disabled + span::before {
+      background-color: $xl-cool-grey-2-20;
+      border-color: $xl-cool-grey-4-75;
+      cursor: not-allowed;
+    }
+
+    &:checked[disabled] + span::after,
+    &:checked:disabled + span::after {
+      border-bottom: 2px solid $xl-cool-grey-4 !important;
+      border-right: 2px solid $xl-cool-grey-4 !important;
+      cursor: not-allowed;
+    }
+
+    &[disabled] + span::before,
+    &:disabled + span::before {
+      background-color: $xl-cool-grey-2-20;
+      border-color: $xl-cool-grey-4-75;
+      cursor: not-allowed;
+    }
+
+    &[disabled] + span::after,
+    &:disabled + span::after {
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+
+    &.indeterminate + span::after {
+      background-color: $xl-blue;
+      content: '';
+      display: inline-block;
+      height: 2px;
+      left: 5px;
+      position: absolute;
+      top: 7px;
+      width: 6px;
+    }
+  }
+
+  &.checkbox-inline {
+    margin-top: 0;
+    padding-left: 0;
+  }
+}
+
+// .d-checkbox-inverse {
+//   [type="checkbox"] {
+//     + span {
+//       color: $xl-white;
+//     }
+//
+//     + span.after::before {
+//       background-color: $xl-blue;
+//       border-color: $xl-white;
+//     }
+//
+//     &:checked + span.after::before {
+//       background-color: $xl-blue;
+//       border-color: $xl-white;
+//     }
+//
+//     &:disabled + span.after::before {
+//       background-color: $xl-sky-blue;
+//       border-color: $xl-white;
+//     }
+//
+//     &:checked:disabled + span.after::before {
+//       background-color: $xl-sky-blue;
+//       border-color: $xl-white;
+//     }
+//
+//     &.indeterminate + span::after {
+//       background-color: $xl-white;
+//     }
+//
+//     &.indeterminate:checked + span::after {
+//       background-color: transparent;
+//     }
+//
+//   }
+// }

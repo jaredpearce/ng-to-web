@@ -1,0 +1,26 @@
+main {
+  color: #000;
+  font: 0.875rem/1.5 'Verdana', sans-serif;
+  padding: 0;
+  margin: 16px;
+
+  h2 {
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+}
+
+section {
+  border-bottom: 1px solid #cccdcd;
+  margin-bottom: 24px;
+}
+
+.example {
+  background-color: #f6f6f6;
+  padding: 16px;
+
+  p {
+    color: #7f7f7f;
+    font-weight: 600;
+  }
+}

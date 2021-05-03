@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font: 0.875em/1.5 'Verdana', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .component-grid {
+        /* align-content: stretch;
+        display: grid;
+        grid-auto-rows: minmax(0, auto);
+        grid-gap: 16px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .page-title {
+        /* grid-area: hd; */
+        margin-top: 4px;
+        position: relative;
+      }
+
+      .example {
+        /* grid-area: bd;
+        grid-row: 2; */
+        border: 1px dashed purple;
+        box-sizing: border-box;
+        float: left;
+        min-height: 50px;
+        padding: 12px;
+        position: relative;
+        width: 20%;
+      }
+
+      .example::after {
+        content: '';
+        display: table-cell;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="component-grid">
+        <header class="page-title">
+          <h2>Web Components</h2>
+        </header>
+        <div class="example">
+          <ui-checkbox cb-label="Awesome Checkbox"></ui-checkbox>
+        </div>
+        <div class="example">
+          <ui-loader
+            loader-label="loading..."
+            loader-class="ring"
+            loader-dir="column">
+          </ui-loader>
+        </div>
+      </section>
+    </main>
+    <script src="ui-checkbox.js"></script>
+    <script src="ui-loader.js"></script>
+    <script src="web-components.js"></script>
+  </body>
+</html>

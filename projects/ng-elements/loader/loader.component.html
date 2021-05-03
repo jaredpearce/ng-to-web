@@ -1,0 +1,9 @@
+<figure class="ng-loader" [ngClass]="{ 'ng-loader__row': loaderDir === 'row', 'ng-loader__col': loaderDir === 'column' }">
+  <div [ngClass]="loaderClass">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <figcaption class="ng-loader--label">{{ loaderLabel }}</figcaption>
+</figure>

@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-to-web';
+  title: string = 'Angular Components';
+
+  // checkbox
+  ieCbLabel: string = 'Checkbox Label';
+
+  // loader
+  isLoadActive: boolean = true;
+  ieLoaderLabel: string = 'loading...';
+  ieLoaderClass: string = 'ellipsis'; // ring
+  ieLoaderDirection: string = 'row'; // column
+
+  cbRegistered(evt: boolean) {
+    console.log('Value received', evt);
+  }
 }

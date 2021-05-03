@@ -1,0 +1,12 @@
+<div class="ng-checkbox">
+  <label>
+    <input
+        type="checkbox"
+        data-sat="ng-checkbox"
+        [formControl]="ngCb"
+        (change)="sendNotice()"
+        [ngClass]="{'indeterminate': cbIndeterminate, 'after': cbLabelPosition === 'after', 'before': cbLabelPosition === 'before'}"
+    >
+    <span [attr.class]="cbLabelPosition">{{cbLabel}}</span>
+  </label>
+</div>

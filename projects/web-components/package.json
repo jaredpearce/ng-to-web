@@ -1,0 +1,11 @@
+{
+  "name": "@jp/web-components",
+  "version": "1.0.0",
+  "description": "Converted Angular elements to web components to be consumed by other frameworks.",
+  "main": "web-components.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jared Pearce",
+  "license": "UNLICENSED"
+}

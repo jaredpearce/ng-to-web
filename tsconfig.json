@@ -11,6 +11,24 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "@jp/ng-elements": [
+        "dist/ng-elements/ng-elements",
+        "dist/ng-elements"
+      ],
+      "@jp/ng-elements/*": [
+        "dist/ng-elements/ng-elements/*",
+        "dist/ng-elements/*"
+      ],
+      "@jp/web-components": [
+        "dist_wc/web-components/web-components",
+        "dist_wc/web-components"
+      ],
+      "@jp/web-components/*": [
+        "dist_wc/web-components/web-components/*",
+        "dist_wc/web-components/*"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,

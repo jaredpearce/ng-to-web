@@ -1,5 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+// EXTERNAL components: created in projects/ng-elements
+import { Checkbox } from '@jp/ng-elements/checkbox';
+import { Loader } from '@jp/ng-elements/loader';
+// END;
 
 import { AppComponent } from './app.component';
 
@@ -8,9 +13,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    Checkbox,
+    Loader
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
