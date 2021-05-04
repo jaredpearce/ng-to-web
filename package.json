@@ -1,6 +1,8 @@
 {
   "name": "ng-to-web",
   "version": "0.0.0",
+  "description": "An example repository of converting Angular component libraries into custom web elements.",
+  "keywords": [ "angular", "elements", "web", "components", "custom", "components", "library", "project", "converting"],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

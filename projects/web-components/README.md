@@ -23,13 +23,13 @@ The structure of this project is as follows (corresponding updates to angular.js
 
 ## Webpack and Plugins
 
-A number[^1] of articles[^2] describe how to create custom web components from an Angular application with an underlying need to create a bash script, Gulp, Node or a custom NPM package. I wanted to leverage Angular's built in functionality to achieve the same concept by using a custom Webpack configuration. This gives me several advantages:
+A number[1] of articles[2] describe how to create custom web components from an Angular application with an underlying need to create a bash script, Gulp, Node or a custom NPM package. I wanted to leverage Angular's built in functionality to achieve the same concept by using a custom Webpack configuration. This gives me several advantages:
 1. Using [Webpack's `entry`](https://v4.webpack.js.org/concepts/#entry) property, I can loop through a number of entries to create individually named JavaScript files. So, now my checkbox component can remain a standalone JS file along with all of my other components.
 2. I can copy over static assets (i.e., package.json) to the final output directory.
 3. I can concatenate the necessary files to make my components work without living in an Angular project (e.g., runtime.ts, main.ts, polyfills.ts);
 
 To make all of this work, I need to install the following NPM packages `npm i -D`:
-- webpack: Install version 4.46.0 because Angular 11 **does not** use Webpack 5[^3]
+- webpack: Install version 4.46.0 because Angular 11 **does not** use Webpack 5[3]
 - @angular-builders/custom-webpack
 - copy-webpack-plugin: **must** be version 6.4.1 (or 6.x) because Angular 11 is *not* on Webpack > 5
 - tapable
@@ -80,7 +80,7 @@ Update directory structure. As with the `ng-elements` project, I made a few stru
 +-- [loader]
 ```
 
-Note: The purpose behind `ngDoBootstrap`[^4]:
+Note: The purpose behind `ngDoBootstrap`[4]:
 - The application doesn't have a bootstrap component.
 - The custom element needs to be registered with the browser.
 
@@ -109,7 +109,7 @@ I've included in this project a file called [web-components.d.ts](./src/web-comp
 
 ## Sources
 
-[^1] [Angular Elements: Create a Component Library for Angular and the Web](https://medium.com/swlh/angular-elements-create-a-component-library-for-angular-and-the-web-8f7986a82999)
-[^2] [Getting Started with Angular Elements](https://www.telerik.com/blogs/getting-started-with-angular-elements)
-[^3] Getting TypeError: Cannot read property 'add' of undefined (issues: [19851](https://github.com/angular/angular-cli/issues/19851#issuecomment-767543092), [20478](https://github.com/angular/angular-cli/pull/20478/files))
-[^4] [Your Options for Building Angular Elements](https://www.angulararchitects.io/aktuelles/your-options-for-building-angular-elements/)
+1. [Angular Elements: Create a Component Library for Angular and the Web](https://medium.com/swlh/angular-elements-create-a-component-library-for-angular-and-the-web-8f7986a82999)
+2. [Getting Started with Angular Elements](https://www.telerik.com/blogs/getting-started-with-angular-elements)
+3. Getting TypeError: Cannot read property 'add' of undefined (issues: [19851](https://github.com/angular/angular-cli/issues/19851#issuecomment-767543092), [20478](https://github.com/angular/angular-cli/pull/20478/files))
+4. [Your Options for Building Angular Elements](https://www.angulararchitects.io/aktuelles/your-options-for-building-angular-elements/)

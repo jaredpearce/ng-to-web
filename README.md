@@ -8,7 +8,7 @@ As with most Angular projects, the application can run locally. This is achieved
 
 ## Compiling Project Code
 
-The application code relies on two projects: *ng-elements*, *web-components*.
+The application code relies on two projects: [*ng-elements*](./projects/ng-elements), [*web-components*](./projects/web-components).
 
 Note: It is recommended to run *ng-elements* in watch mode while running `npm start` to view component modification. There currently isn't a 'watch' mode for *web-components*.
 
