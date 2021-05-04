@@ -2,26 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
-## Development server
+## Run Locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As with most Angular projects, the application can run locally. This is achieved by reviewing the available scripts in the package.json file. Before running `npm start` to launch the primary application locally, we need to compile the project code.
 
-## Code scaffolding
+## Compiling Project Code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application code relies on two projects: *ng-elements*, *web-components*.
 
-## Build
+Note: It is recommended to run *ng-elements* in watch mode while running `npm start` to view component modification. There currently isn't a 'watch' mode for *web-components*.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Compile ng-elements
 
-## Running unit tests
+To compile *ng-elements*:
+- one time, run `npm run build:lib`
+- in watch mode, run `npm run build:lib_dev`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Compile web-components
 
-## Running end-to-end tests
+To compile *web-components*:
+- one time, run `npm run build:wc`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This script has two parts:
+1. `ng build --prod web-components`
+2. `npm run cleanup:vendor`
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Step one creates the desired compiled output by running the custom Webpack configuration and copying non-compiled (e.g., package.json, web-components.d.ts) files to the *dist_wc* directory. Part two removes *runtime.js*, *main.js* and *polyfills.js* from the *dist_wc* directory because those files were previously concatenated into a single file: *web-components.js*.

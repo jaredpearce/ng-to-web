@@ -6,7 +6,8 @@
     "types": []
   },
   "files": [
-    "src/public-api.ts"
+    "src/public-api.ts",
+    "src/web-components.d.ts"
   ],
   "include": [
     "src/**/*.ts",

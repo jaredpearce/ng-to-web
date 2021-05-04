@@ -40,7 +40,6 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'web-components',
-          // name: 'vendor',
           chunks: 'initial',
         }
       }
@@ -50,13 +49,13 @@ module.exports = {
     // // Settings to inject JS and CSS into HTML
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.html',
-      // inject: false
+      template: 'src/index.html'
     }),
     // Copy package.json AND wc.typings.d.ts file to dist_wc directory
     new CopyWebpackPlugin({
       patterns: [
-        './projects/web-components/package.json'
+        './projects/web-components/package.json',
+        './projects/web-components/src/web-components.d.ts'
       ]
     }),
     // Merge files: runtime.js, main.js, polyfills.js
